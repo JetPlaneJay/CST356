@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--removeIf(production)-->
+<link rel="stylesheet" href="index.css">
+<script src="scripts/students.js"></script>
+<!--endRemoveIf(production)-->
+<!-- inject:css -->
+        <!-- endinject -->
+</head>
+<body>
+
+
+    <div class="links">
+        <span> 
+            <a href="http://127.0.0.1:5500/index.html">Home</a>
+        </span>
+    
+       <span>
+        <a href="http://127.0.0.1:5500/instructor.html">Instructors</a>
+       </span>
+    
+        <span>
+            <a href="http://127.0.0.1:5500/student.html">Students</a>
+        </span>
+    
+        <span>
+            <a href="http://127.0.0.1:5500/login.html">Log Off</a>
+        </span>
+        
+    </div>
+
+
+
+    <h1 id="label">Students</h1>
+<div>
+
+<table style="width:50%" id="studentList">
+    <th class="tableHeading">Student ID</th>
+    <th class="tableHeading">Email Address</th>
+
+</table>
+</div>
+
+      <!--removeIf(production)-->
+<script>initializeStudents()</script>
+
+
+        <!--endRemoveIf(production)-->
+        
+        <!-- inject:js -->
+        <!-- endinject -->
+</body>
+</html>
