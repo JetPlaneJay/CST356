@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="index.css">
+        <script src='scripts/login.js'></script>
+    </head>
+    <body>
+        <h1> Registration</h1>
+        <form>
+            <div>
+                First name: <input type="text" id="fname" name="fnameLogin"/>
+                <span id='fname-error' style='visibility:hidden'>Please enter your first name.</span>
+            </div>
+
+            <div>   
+                Password: <input type="password" id="password" name="passwordLogin"/>
+                <span id='password-error' style='visibility:hidden'>Please enter your password.</span>
+            </div>
+            <div>
+                <input type="button" value="Login" onclick="validate ()"/>
+            </div>
+        </form>
+
+    </body>
+</html>
