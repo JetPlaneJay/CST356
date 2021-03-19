@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Database;
+using Microsoft.AspNetCore.Authorization;
 
 namespace webapi.Controllers
 {
@@ -27,4 +28,22 @@ namespace webapi.Controllers
         }
 
     }
+     [HttpDelete]
+        [Route("{term}")]
+        [Authorize]
+        public ActionResult Delete(string term)
+        {
+            var studentItem = Student.Find(item =>
+                   item.Term.Equals(term, StringComparison.InvariantCultureIgnoreCase));
+
+            if (GetAll == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                Student.Remove(studentItem);
+                return NoContent();
+            }
+        }
 }
