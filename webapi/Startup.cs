@@ -65,6 +65,9 @@ namespace webapi
             {
                 endpoints.MapControllers();
             });
+
+            app.UseAuthentication();
+            app.UseAuthorization();
         }
         
 
@@ -74,5 +77,13 @@ namespace webapi
             services.AddScoped<StudentService>();
         }
     }
+    public void ConfigureServices(IServiceCollection services){
+    services.AddAuthentication(options =>
+{
+ options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;       options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme; }).AddJwtBearer(options =>
+{
+ options.Authority = $"https://{Configuration["Auth0:Domain"]}/";
+ options.Audience = Configuration["Auth0:Audience"];
+});
     
 }
